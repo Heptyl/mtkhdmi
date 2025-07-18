@@ -1,0 +1,3 @@
+# MTK hdmi cec  .rc configure
+on post-fs-data
+    chown root system /sys/class/switch/cec_hdmi/state

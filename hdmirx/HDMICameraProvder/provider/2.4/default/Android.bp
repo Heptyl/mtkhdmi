@@ -1,0 +1,57 @@
+
+bootstrap_go_package {
+    name: "soong-lib-hdmirxprovider-mediatek",
+    pkgPath: "android/soong/lib-hdmirxprovider/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "hdmirxprovider.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+hdmirxprovider_binary_defaults {
+     name: "hdmirxprovider_service_defaults",
+}
+
+hdmirxprovider_sharelib_defaults {
+     name: "hdmirxprovider_defaults",
+}
+
+
+cc_library_shared {
+    name: "android.hardware.camera.provider@2.4-hdmirx",
+    proprietary: true,
+	defaults: ["hdmirxprovider_defaults"],
+
+}
+
+hdmirxproviderImpl_sharelib_defaults {
+     name: "hdmirxproviderImpl_defaults",
+}
+
+
+cc_library_shared {
+    name: "android.hardware.camera.provider@2.4-impl-hdmirx",
+    defaults: ["hidl_defaults","hdmirxproviderImpl_defaults"],
+    proprietary: true,
+    relative_install_path: "hw",
+
+}
+
+
+
+cc_binary {
+    name: "android.hardware.camera.provider@2.4-hdmirx-service",
+    defaults: ["hidl_defaults","hdmirxprovider_service_defaults"],
+    proprietary: true,
+    relative_install_path: "hw",
+    compile_multilib: "32",
+
+}
+
+
+
+

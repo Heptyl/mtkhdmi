@@ -1,0 +1,20 @@
+This directory contains HDMI_CEC HAL interface, which defines the interface of
+hdmi_cec.h and is used to build a HDMI_CEC static library.
+
+WHAT IT DOES?
+=============
+HDMI_CEC HAL provide a convenience API to handle HDMI_CEC information.
+
+HOW IT WAS BUILT?
+==================
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+provide the private interface for MediaTek HDMI CEC
+generate a shared static 'hdmi_cec.$(TARGET_BOARD_PLATFORM).a'.
+For example: TARGET_BOARD_PLATFORM = mt6795
+
+All the source code of this library were written by MediaTek co..
